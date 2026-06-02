@@ -64,35 +64,35 @@ const FEATURED_VIDEOS = [
 const MORE_VIDEOS = [
   {
     thumbnail: "https://res.cloudinary.com/dmhabztbf/video/upload/v1760018566/WhatsApp_Video_2025-09-27_at_13.25.59_7b52d783_txwaak.jpg",
+    videoUrl: "https://res.cloudinary.com/dmhabztbf/video/upload/v1760018566/WhatsApp_Video_2025-09-27_at_13.25.59_7b52d783_txwaak.mp4",
     category: "Process Overview",
     title: "Car Scrap Process Overview",
     description: "A comprehensive walkthrough of our eco-friendly car scrapping process from start to finish.",
     views: "12.5K",
     date: "Sep 27, 2025",
-    link: `https://wa.me/91${SITE.phone}`,
   },
   {
     thumbnail: "https://res.cloudinary.com/dmhabztbf/video/upload/v1760018155/WhatsApp_Video_2025-09-27_at_13.26.10_bcc7cc2f_uskgxc.jpg",
+    videoUrl: "https://res.cloudinary.com/dmhabztbf/video/upload/v1760018155/WhatsApp_Video_2025-09-27_at_13.26.10_bcc7cc2f_uskgxc.mp4",
     category: "Recycling Process",
     title: "Eco-Friendly Vehicle Disposal",
     description: "See how we properly dispose of vehicles while maintaining strict environmental standards.",
     views: "9.8K",
     date: "Sep 27, 2025",
-    link: `https://wa.me/91${SITE.phone}`,
   },
   {
     thumbnail: "https://res.cloudinary.com/dmhabztbf/video/upload/v1760017940/WhatsApp_Video_2025-09-27_at_13.28.20_ab4a75c6_ebwogt.jpg",
+    videoUrl: "https://res.cloudinary.com/dmhabztbf/video/upload/v1760017940/WhatsApp_Video_2025-09-27_at_13.28.20_ab4a75c6_ebwogt.mp4",
     category: "Behind the Scenes",
     title: "Dismantling and Parts Recovery",
     description: "Watch our specialized team efficiently dismantle vehicles and recover valuable parts for recycling.",
     views: "11.2K",
     date: "Sep 27, 2025",
-    link: `https://wa.me/91${SITE.phone}`,
   },
 ];
 
 export default function Videos() {
-  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [activeVideo, setActiveVideo] = useState<{ type: "youtube" | "mp4"; src: string } | null>(null);
 
   return (
     <div className={styles.page}>
@@ -152,7 +152,7 @@ export default function Videos() {
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className={styles.thumb} onClick={() => setActiveVideo(v.id)}>
+                <div className={styles.thumb} onClick={() => setActiveVideo({ type: "youtube", src: v.id })}>
                   <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt={v.title} />
                   <div className={styles.playBtn}><Play size={24} fill="white" /></div>
                   <span className={styles.duration}><Clock size={12} /> {v.duration}</span>
@@ -192,11 +192,9 @@ export default function Videos() {
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className={styles.thumb}>
+                <div className={styles.thumb} onClick={() => setActiveVideo({ type: "mp4", src: v.videoUrl })}>
                   <img src={v.thumbnail} alt={v.title} />
-                  <a href={v.link} target="_blank" rel="noreferrer" className={styles.playBtn}>
-                    <Play size={24} fill="white" />
-                  </a>
+                  <div className={styles.playBtn}><Play size={24} fill="white" /></div>
                 </div>
                 <div className={styles.cardBody}>
                   <span className={styles.category}>{v.category}</span>
@@ -236,12 +234,16 @@ export default function Videos() {
               <button className={styles.closeBtn} onClick={() => setActiveVideo(null)}>
                 <X size={22} />
               </button>
-              <iframe
-                src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
-                title="Video player"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-              />
+              {activeVideo.type === "youtube" ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${activeVideo.src}?autoplay=1`}
+                  title="Video player"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                />
+              ) : (
+                <video src={activeVideo.src} controls autoPlay style={{ width: "100%", height: "100%" }} />
+              )}
             </motion.div>
           </motion.div>
         )}
