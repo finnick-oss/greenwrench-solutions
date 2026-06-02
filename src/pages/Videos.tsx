@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, X, Eye, Clock, ExternalLink } from "lucide-react";
-import { PHONE_HREF, SITE } from "../constants/siteConfig";
+import { PHONE_HREF } from "../constants/siteConfig";
 import styles from "./Videos.module.css";
 
 const FEATURED_VIDEOS = [
