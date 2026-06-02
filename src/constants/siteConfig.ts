@@ -3,18 +3,18 @@
 // ============================================================
 
 export const SITE = {
-  name: "GreenWrench Solutions",
+  name: "ScrapWala",
   tagline: "Eco-Friendly Car Recycling",
   description:
     "Delhi's most trusted car recycling & scrapping service. We give your old vehicle a second life — responsibly.",
-  phone: "8448557370",
-  phoneDisplay: "+91 84485 57370",
-  email: "info@greenwrenchsolutions.in",
+  phone: "0000000000",
+  phoneDisplay: "+91 00000 00000",
+  email: "test@greenwrenchsolutions.in",
   website: "www.greenwrenchsolutions.in",
   address: {
-    line1: "F-25/117, Pocket 25, Sector 7",
-    line2: "Rohini, Delhi – 110085",
-    full: "F-25/117, Pocket 25, Sector 7, Rohini, Delhi, 110085",
+    line1: "Test Location, Block A",
+    line2: "Test City – 000000",
+    full: "Test Location, Block A, Test City, 000000",
   },
   mapUrl:
     "https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUqBggCECMYJzIGCAAQRRg8MgYIARBFGDkyBggCECMYJzIGCAMQRRg8MgYIBBBFGEEyBggFEEUYQTIGCAYQRRhBMgYIBxBFGDzSAQg2OTI4ajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KRH0dYtEAQ05MRueIj3s_yvL&daddr=F+-+25/117,+Pocket+25,+Sector+7,+Rohini,+Delhi,+110085",
