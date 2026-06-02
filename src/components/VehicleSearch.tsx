@@ -29,7 +29,7 @@ export default function VehicleSearch() {
   // Build WhatsApp message with all details
   const buildWhatsAppLink = () => {
     const msg = [
-      `Hello GreenWrench Solutions! I want to scrap my vehicle.`,
+      `Hello ${SITE.name}! I want to scrap my vehicle.`,
       ``,
       `🚗 Vehicle Details:`,
       `• Make: ${make}`,

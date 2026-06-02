@@ -9,7 +9,6 @@ const navLinks = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Services", path: "/services" },
-  { label: "Gallery", path: "/gallery" },
   { label: "Videos", path: "/videos" },
   { label: "Contact", path: "/contact" },
 ];
@@ -40,7 +39,7 @@ export default function Navbar() {
           <Link to="/" className={styles.logo}>
             <span className={styles.logoIcon}>🔧</span>
             <span className={styles.logoText}>
-              <span className={styles.logoGreen}>Green</span>Wrench
+              {SITE.name}
             </span>
           </Link>
 

@@ -5,9 +5,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import Gallery from "./pages/Gallery";
-import Contact from "./pages/Contact";
 import Videos from "./pages/Videos";
+import Contact from "./pages/Contact";
 
 function PageWrapper({ children }: { children: React.ReactNode }) {
   return (
@@ -32,7 +31,6 @@ function AppRoutes() {
           <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
           <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
           <Route path="/services" element={<PageWrapper><Services /></PageWrapper>} />
-          <Route path="/gallery" element={<PageWrapper><Gallery /></PageWrapper>} />
           <Route path="/videos" element={<PageWrapper><Videos /></PageWrapper>} />
           <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
           <Route path="*" element={<PageWrapper><Home /></PageWrapper>} />

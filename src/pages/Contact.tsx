@@ -134,7 +134,7 @@ export default function Contact() {
               </p>
               <div className={styles.mapFrame}>
                 <iframe
-                  title="GreenWrench Location"
+                  title={`${SITE.name} Location`}
                   src={`https://maps.google.com/maps?q=${encodeURIComponent(SITE.address.full)}&output=embed`}
                   width="100%"
                   height="320"

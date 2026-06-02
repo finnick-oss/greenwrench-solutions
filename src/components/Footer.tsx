@@ -29,7 +29,7 @@ export default function Footer() {
           <div className={styles.brand}>
             <Link to="/" className={styles.logo}>
               <span>🔧</span>
-              <span><span className={styles.green}>Green</span>Wrench Solutions</span>
+              <span>{SITE.name}</span>
             </Link>
             <p className={styles.tagline}>{SITE.tagline}</p>
             <p className={styles.desc}>{SITE.description}</p>
