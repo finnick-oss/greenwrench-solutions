@@ -1,27 +1,27 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
-  Phone, ArrowRight, Recycle, Car, FileCheck, Truck,
-  BadgeCheck, Star, ChevronRight, Leaf, Shield, Clock
+  Phone, ArrowRight, CarFront, FileText, MapPin, Wrench, Award,
+  BadgeCheck, Star, ChevronRight, Leaf, Shield, Clock, Sprout
 } from "lucide-react";
 import { SITE, PHONE_HREF, WHATSAPP_HREF } from "../constants/siteConfig";
 import VehicleSearch from "../components/VehicleSearch";
 import styles from "./Home.module.css";
 
 const services = [
-  { icon: <Car size={26} />, title: "Old Car Buyback", desc: "Get the best price for your old, damaged or end-of-life vehicle. Instant quote & payment." },
-  { icon: <Recycle size={26} />, title: "Eco Recycling", desc: "Environmentally responsible dismantling. 95% of every vehicle recycled, zero landfill." },
-  { icon: <Truck size={26} />, title: "Free Pickup", desc: "We come to you — anywhere in Delhi NCR. No charges, no hassle, just hand over the keys." },
-  { icon: <FileCheck size={26} />, title: "RTO Documentation", desc: "Complete paperwork handled by us. Form 35, cancellation of RC — we do it all." },
-  { icon: <Shield size={26} />, title: "Genuine Spare Parts", desc: "Certified recycled parts available at unbeatable prices. Quality tested, warranty provided." },
-  { icon: <BadgeCheck size={26} />, title: "Certified Process", desc: "Govt-approved scrapping facility. Scrapping certificate issued for tax & insurance benefits." },
+  { icon: <CarFront size={26} />, title: "Old Car Buyback", desc: "Get the best price for your old, damaged or end-of-life vehicle. Instant quote & payment." },
+  { icon: <Leaf size={26} />, title: "Eco Recycling", desc: "Environmentally responsible dismantling. 95% of every vehicle recycled, zero landfill." },
+  { icon: <MapPin size={26} />, title: "Free Pickup", desc: "We come to you — anywhere in Delhi NCR. No charges, no hassle, just hand over the keys." },
+  { icon: <FileText size={26} />, title: "RTO Documentation", desc: "Complete paperwork handled by us. Form 35, cancellation of RC — we do it all." },
+  { icon: <Wrench size={26} />, title: "Genuine Spare Parts", desc: "Certified recycled parts available at unbeatable prices. Quality tested, warranty provided." },
+  { icon: <Award size={26} />, title: "Certified Process", desc: "Govt-approved scrapping facility. Scrapping certificate issued for tax & insurance benefits." },
 ];
 
 const steps = [
   { no: "01", title: "Get a Quote", desc: "Call or WhatsApp us with your vehicle details for an instant free quote." },
-  { no: "02", title: "Free Pickup", desc: "Schedule a convenient time and we'll pick up the vehicle from your doorstep." },
-  { no: "03", title: "Instant Payment", desc: "Receive cash/bank transfer on the spot, before we take away the vehicle." },
-  { no: "04", title: "Paperwork Done", desc: "We handle all RTO formalities. You get a scrapping certificate within days." },
+  { no: "02", title: "Paperwork", desc: "We handle all RTO formalities — Form 35, RC cancellation and hypothecation clearance." },
+  { no: "03", title: "Instant Payment & Certificate", desc: "Receive cash/bank transfer on the spot along with a government-approved scrapping certificate." },
+  { no: "04", title: "Free Pickup", desc: "Schedule a convenient time and we'll pick up the vehicle from your doorstep." },
 ];
 
 const testimonials = [
@@ -31,7 +31,7 @@ const testimonials = [
 ];
 
 const whyUs = [
-  { icon: <Leaf size={20} />, title: "Eco-Certified", desc: "Pollution Control Board certified facility" },
+  { icon: <Sprout size={20} />, title: "Eco-Certified", desc: "Pollution Control Board certified facility" },
   { icon: <BadgeCheck size={20} />, title: "Govt Approved", desc: "Registered vehicle scrapping center" },
   { icon: <Clock size={20} />, title: "Same Day Service", desc: "Quick turnaround within 24 hours" },
   { icon: <Shield size={20} />, title: "Best Price Guarantee", desc: "We match any verified quote" },
@@ -56,7 +56,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
           >
             <span className={styles.heroBadgeDot} />
-            DELHI'S #1 CAR RECYCLING SERVICE
+            <span className={styles.red}>DELHI NCR</span>&nbsp;CAR RECYCLING SERVICE
           </motion.div>
 
           <motion.h1
@@ -144,7 +144,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <span className={styles.badge}>WHAT WE DO</span>
-            <h2>Our Services</h2>
+            <h2 className={styles.servicesHeading}>Our Services</h2>
             <p>From picking up your old vehicle to completing all paperwork — we handle everything.</p>
           </motion.div>
 

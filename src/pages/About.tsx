@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, Leaf, Users, Award, Target, CheckCircle } from "lucide-react";
+import { Phone, Leaf, Users, Award, Target } from "lucide-react";
 import { SITE, PHONE_HREF } from "../constants/siteConfig";
 import styles from "./About.module.css";
 
@@ -10,19 +10,10 @@ const values = [
   { icon: <Target size={24} />, title: "Fair Pricing", desc: "We assess every vehicle honestly and pay the best market price — guaranteed." },
 ];
 
-const milestones = [
-  { year: "2015", title: "Founded", desc: "Started operations in Rohini, Delhi with a small team and a big vision." },
-  { year: "2017", title: "Govt Registration", desc: "Received official Registration as an Authorised Vehicle Scrapping Facility." },
-  { year: "2019", title: "10,000 Cars", desc: "Crossed 10,000 vehicles recycled. Expanded operations across Delhi NCR." },
-  { year: "2022", title: "Eco Certification", desc: "Certified by Pollution Control Board for zero-waste recycling process." },
-  { year: "2025", title: "15,000+ Cars", desc: "Served 12,000+ happy customers and still growing!" },
-];
-
 const team = [
-  { name: "Suresh Gupta", role: "Founder & Director", initial: "S" },
-  { name: "Manish Tyagi", role: "Operations Head", initial: "M" },
-  { name: "Priyanka Singh", role: "Customer Relations", initial: "P" },
-  { name: "Ravi Sharma", role: "Technical Lead", initial: "R" },
+  { name: "Kiran Patwal", role: "Founder", initial: "K" },
+  { name: "Anamika Rawat", role: "Customer Relations", initial: "A" },
+  { name: "Ravi", role: "Technical Lead", initial: "R" },
 ];
 
 export default function About() {
@@ -67,7 +58,7 @@ export default function About() {
               viewport={{ once: true }}
             >
               <span className={styles.sectionBadge}>Our Story</span>
-              <h2>From a Small Garage to Delhi's #1 Recycling Center</h2>
+              <h2>From a Small Garage to Delhi NCR's Trusted Recycling Center</h2>
               <p>
                 Founded in {SITE.establishedYear}, {SITE.name} was born out of a simple observation: thousands of end-of-life
                 vehicles in Delhi were being abandoned, scrapped illegally, or sold for throwaway prices —
@@ -125,38 +116,6 @@ export default function About() {
                 <p>{v.desc}</p>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className={styles.section}>
-        <div className={styles.sectionInner}>
-          <div className={styles.sectionHead}>
-            <span className={styles.sectionBadge}>Our Journey</span>
-            <h2>Milestones Over the Years</h2>
-          </div>
-          <div className={styles.timeline}>
-            {milestones.map((m, i) => (
-              <motion.div
-                key={m.year}
-                className={`${styles.timelineItem} ${i % 2 !== 0 ? styles.right : ""}`}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <div className={styles.timelineCard}>
-                  <span className={styles.timelineYear}>{m.year}</span>
-                  <h3>{m.title}</h3>
-                  <p>{m.desc}</p>
-                </div>
-                <div className={styles.timelineDot}>
-                  <CheckCircle size={16} />
-                </div>
-              </motion.div>
-            ))}
-            <div className={styles.timelineLine} />
           </div>
         </div>
       </section>

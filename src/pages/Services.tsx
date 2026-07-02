@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import {
-  Car, Recycle, Truck, FileCheck, Shield, BadgeCheck,
+  CarFront, Leaf, Truck, FileCheck, Shield, BadgeCheck,
   Phone, ChevronRight, Check
 } from "lucide-react";
 import { PHONE_HREF, SITE } from "../constants/siteConfig";
@@ -8,7 +8,7 @@ import styles from "./Services.module.css";
 
 const services = [
   {
-    icon: <Car size={32} />,
+    icon: <CarFront size={32} />,
     title: "Old Car Buyback",
     shortDesc: "Sell your old, damaged or end-of-life car at the best market price.",
     desc: "Whether your car is old, non-functional, accident-damaged, or simply at the end of its useful life — we offer the best price in Delhi NCR. Our expert assessors evaluate your vehicle fairly and transparently.",
@@ -21,7 +21,7 @@ const services = [
     ],
   },
   {
-    icon: <Recycle size={32} />,
+    icon: <Leaf size={32} />,
     title: "Eco-Friendly Recycling",
     shortDesc: "95% of every recycled vehicle is recovered and reused responsibly.",
     desc: "Our certified facility processes every vehicle to the highest environmental standards. Fluids are safely drained and treated, metals are sorted and sent to certified smelters, and plastics are responsibly handled.",

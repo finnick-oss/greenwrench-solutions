@@ -265,13 +265,15 @@
 
 /* Team */
 .teamGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
 }
 
 .teamCard {
   display: block;
+  flex: 0 1 260px;
   background: white;
   border: 1px solid #e5e7eb;
   border-radius: 16px;
@@ -303,13 +305,11 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .valuesGrid { grid-template-columns: repeat(2, 1fr); }
-  .teamGrid { grid-template-columns: repeat(2, 1fr); }
   .storyGrid { grid-template-columns: 1fr; gap: 2rem; }
 }
 
 @media (max-width: 640px) {
   .valuesGrid { grid-template-columns: 1fr; }
-  .teamGrid { grid-template-columns: repeat(2, 1fr); }
   .timelineItem, .timelineItem.right { padding: 0 0 0 3rem; justify-content: flex-start; }
   .timelineLine { left: 12px; transform: none; }
   .timelineDot { left: 12px; transform: translateX(-50%); }

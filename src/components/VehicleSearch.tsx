@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, ChevronDown, Search, MessageCircle, ArrowRight } from "lucide-react";
 import { VEHICLE_DATA, YEARS } from "../constants/vehicleData";
-import { PHONE_HREF, SITE } from "../constants/siteConfig";
+import { PHONE_HREF, SITE, getWhatsAppHref } from "../constants/siteConfig";
 import styles from "./VehicleSearch.module.css";
 
 export default function VehicleSearch() {
@@ -40,7 +40,7 @@ export default function VehicleSearch() {
       ``,
       `Please provide the best scrap price and pickup details. Thank you!`,
     ].join("\n");
-    return `https://wa.me/91${SITE.phone}?text=${encodeURIComponent(msg)}`;
+    return getWhatsAppHref(msg);
   };
 
   const handleGetQuote = () => {

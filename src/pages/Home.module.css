@@ -78,6 +78,7 @@
 }
 
 .green { color: #4ade80; }
+.red { color: #f87171; }
 
 .heroSub {
   font-size: 1.05rem;
@@ -202,7 +203,7 @@
 
 .stripItem strong {
   display: block;
-  font-size: 0.85rem;
+  font-size: 20px;
   font-weight: 700;
   color: #111827;
   margin-bottom: 2px;
@@ -210,6 +211,7 @@
 
 .stripItem p {
   font-size: 0.775rem;
+  font-weight: 700;
   color: #6b7280;
   line-height: 1.4;
 }
@@ -245,6 +247,10 @@
   color: #111827;
   letter-spacing: -1px;
   margin-bottom: 0.6rem;
+}
+
+.sectionHead h2.servicesHeading {
+  font-size: clamp(2.25rem, 4vw, 3rem);
 }
 
 .sectionHead p {

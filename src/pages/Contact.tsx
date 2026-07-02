@@ -81,7 +81,7 @@ export default function Contact() {
             We're Here to <span>Help You</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
-            Reach us on call, WhatsApp, or visit our facility in Rohini, Delhi.
+            Reach us on call, WhatsApp, or visit our facility in {SITE.address.city}.
           </motion.p>
         </div>
       </section>
