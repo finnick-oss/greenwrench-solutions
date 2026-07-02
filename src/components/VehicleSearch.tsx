@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, ChevronDown, Search, MessageCircle, ArrowRight } from "lucide-react";
+import { Phone, ChevronDown, Search, MessageCircle, ArrowRight, Mail, CheckCircle } from "lucide-react";
 import { VEHICLE_DATA, YEARS } from "../constants/vehicleData";
 import { PHONE_HREF, SITE, getWhatsAppHref } from "../constants/siteConfig";
 import styles from "./VehicleSearch.module.css";
@@ -11,6 +11,7 @@ export default function VehicleSearch() {
   const [year, setYear] = useState("");
   const [fuel, setFuel] = useState("");
   const [vehicleNo, setVehicleNo] = useState("");
+  const [email, setEmail] = useState("");
   const [showCta, setShowCta] = useState(false);
 
   const selectedMake = VEHICLE_DATA.find((m) => m.name === make);
@@ -25,6 +26,8 @@ export default function VehicleSearch() {
   };
 
   const isComplete = make && model && year && fuel && vehicleNo.trim().length >= 4;
+  const hasEmail = /^\S+@\S+\.\S+$/.test(email.trim());
+  const emailOk = email.trim() === "" || hasEmail;
 
   // Build WhatsApp message with all details
   const buildWhatsAppLink = () => {
@@ -44,7 +47,7 @@ export default function VehicleSearch() {
   };
 
   const handleGetQuote = () => {
-    if (isComplete) setShowCta(true);
+    if (isComplete && emailOk) setShowCta(true);
   };
 
   return (
@@ -138,13 +141,35 @@ export default function VehicleSearch() {
             </div>
           </div>
 
+          {/* Email — optional, full width row */}
+          <div className={styles.vehicleNoRow}>
+            <div className={styles.field}>
+              <label>Email (Optional)</label>
+              <div className={styles.inputWrap}>
+                <span className={styles.platePrefix}><Mail size={16} /></span>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => { setEmail(e.target.value); setShowCta(false); }}
+                  placeholder="you@example.com"
+                  className={styles.vehicleInput}
+                />
+              </div>
+              <span className={styles.fieldHint}>
+                {email.trim() && !hasEmail
+                  ? "Please enter a valid email address"
+                  : "Leave it blank to get your quote directly on WhatsApp"}
+              </span>
+            </div>
+          </div>
+
           <div className={styles.actions}>
             <motion.button
-              className={`${styles.quoteBtn} ${!isComplete ? styles.disabled : ""}`}
+              className={`${styles.quoteBtn} ${!(isComplete && emailOk) ? styles.disabled : ""}`}
               onClick={handleGetQuote}
-              disabled={!isComplete}
-              whileHover={isComplete ? { scale: 1.02 } : {}}
-              whileTap={isComplete ? { scale: 0.98 } : {}}
+              disabled={!(isComplete && emailOk)}
+              whileHover={isComplete && emailOk ? { scale: 1.02 } : {}}
+              whileTap={isComplete && emailOk ? { scale: 0.98 } : {}}
             >
               <Search size={18} />
               Get Quote Now
@@ -172,22 +197,31 @@ export default function VehicleSearch() {
                         <span className={styles.plateTag}>{vehicleNo}</span>
                       </div>
                     </div>
-                    <p className={styles.resultMsg}>
-                      Great! Your vehicle details are ready. Connect with our team now to get the <strong>best scrap price</strong> — we'll call you back within minutes.
-                    </p>
+                    {hasEmail ? (
+                      <p className={styles.resultMsg}>
+                        <CheckCircle size={16} style={{ verticalAlign: "-3px", marginRight: "6px", color: "#16a34a" }} />
+                        <strong>Thank you!</strong> We've received your details. Our team will reach out to you at <strong>{email.trim()}</strong> with the <strong>best scrap price</strong> shortly.
+                      </p>
+                    ) : (
+                      <p className={styles.resultMsg}>
+                        Great! Your vehicle details are ready. Connect with our team now to get the <strong>best scrap price</strong> — we'll call you back within minutes.
+                      </p>
+                    )}
                     <p className={styles.perks}>✓ Free Pickup &nbsp;·&nbsp; ✓ Instant Payment &nbsp;·&nbsp; ✓ RTO Docs Handled</p>
                   </div>
-                  <div className={styles.resultRight}>
-                    <a href={buildWhatsAppLink()} className={styles.waBtn} target="_blank" rel="noreferrer">
-                      <MessageCircle size={20} />
-                      WhatsApp for Quote
-                    </a>
-                    <a href={PHONE_HREF} className={styles.callBtn}>
-                      <Phone size={20} />
-                      Call: {SITE.phoneDisplay}
-                    </a>
-                    <p className={styles.responseTime}>⚡ Typical response: under 5 minutes</p>
-                  </div>
+                  {!hasEmail && (
+                    <div className={styles.resultRight}>
+                      <a href={buildWhatsAppLink()} className={styles.waBtn} target="_blank" rel="noreferrer">
+                        <MessageCircle size={20} />
+                        WhatsApp for Quote
+                      </a>
+                      <a href={PHONE_HREF} className={styles.callBtn}>
+                        <Phone size={20} />
+                        Call: {SITE.phoneDisplay}
+                      </a>
+                      <p className={styles.responseTime}>⚡ Typical response: under 5 minutes</p>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             )}
