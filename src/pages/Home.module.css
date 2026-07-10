@@ -8,7 +8,9 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #0a1f0e;
+  background:
+    linear-gradient(rgba(5, 18, 9, 0.82), rgba(5, 18, 9, 0.86)),
+    url("../assets/scrap-background.png") center / cover no-repeat #0a1f0e;
 }
 
 .heroBg { position: absolute; inset: 0; pointer-events: none; }
