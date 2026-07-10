@@ -9,7 +9,6 @@
   justify-content: center;
   overflow: hidden;
   background:
-    linear-gradient(rgba(5, 18, 9, 0.82), rgba(5, 18, 9, 0.86)),
     url("../assets/scrap-background.png") center / cover no-repeat #0a1f0e;
 }
 
@@ -84,11 +83,11 @@
 
 .heroSub {
   font-size: 1.05rem;
-  color: rgba(255,255,255,0.65);
+  color: rgb(255, 255, 255);
   max-width: 560px;
   margin: 0 auto 2.5rem;
   line-height: 1.7;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .heroCtas {
