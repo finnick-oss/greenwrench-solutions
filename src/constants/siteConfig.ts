@@ -2,7 +2,7 @@
 // SITE CONFIGURATION — Edit here to update everywhere
 // ============================================================
 
-const PHONE = "0000000000";
+const PHONE = "7982462752";
 
 export const SITE = {
   name: "Bhakti Auto Scrap Traders",
@@ -10,19 +10,19 @@ export const SITE = {
   description:
     "Delhi's most trusted car recycling & scrapping service. We give your old vehicle a second life — responsibly.",
   phone: PHONE,
-  phoneDisplay: "+91 00000 00000",
-  email: "test@greenwrenchsolutions.in",
+  phoneDisplay: "+91 79824 62752",
+  email: "bhaktitraders6@gmail.com",
   website: "www.greenwrenchsolutions.in",
   address: {
-    line1: "Test Location, Block A",
-    line2: "Test City – 000000",
-    city: "Test City",
-    full: "Test Location, Block A, Test City, 000000",
+    line1: "1/138 Dakshinpuri",
+    line2: "Dr Ambedkar Nagar",
+    city: "New Delhi",
+    full: "1/138 Dakshinpuri, Dr Ambedkar Nagar, New Delhi-110062",
   },
   mapUrl:
-    "https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUqBggCECMYJzIGCAAQRRg8MgYIARBFGDkyBggCECMYJzIGCAMQRRg8MgYIBBBFGEEyBggFEEUYQTIGCAYQRRhBMgYIBxBFGDzSAQg2OTI4ajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KRH0dYtEAQ05MRueIj3s_yvL&daddr=F+-+25/117,+Pocket+25,+Sector+7,+Rohini,+Delhi,+110085",
+    "https://www.google.com/maps/place/28%C2%B031'22.3%22N+77%C2%B014'24.5%22E/@28.5228546,77.2375492,17z/data=!3m1!4b1!4m4!3m3!8m2!3d28.5228546!4d77.2401241?hl=en&entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
   mapEmbed:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.123!2d77.1234!3d28.7234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcbaf2fecec7d9b1b!2sF-25%2F117%2C+Pocket+25%2C+Sector+7%2C+Rohini%2C+Delhi%2C+110085!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin",
+    "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3505.5609444666766!2d77.23754917549678!3d28.52285457572479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDMxJzIyLjMiTiA3N8KwMTQnMjQuNSJF!5e0!3m2!1sen!2sin!4v1783251882186!5m2!1sen!2sin",
   socialLinks: {
     whatsapp: `https://wa.me/91${PHONE}`,
     facebook: "#",
